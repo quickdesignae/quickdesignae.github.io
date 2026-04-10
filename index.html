@@ -1,0 +1,1106 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quick Design Printing & Advertising | Abu Dhabi</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'montserrat': ['Montserrat', 'sans-serif'],
+                    },
+                    colors: {
+                        'brand-blue': '#0066b3',
+                        'brand-orange': '#ff6b35',
+                        'brand-black': '#0a0a0a',
+                        'brand-dark': '#111111',
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'scroll': 'scroll 30s linear infinite',
+                        'glow': 'glow 2s ease-in-out infinite alternate',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                        scroll: {
+                            '0%': { transform: 'translateX(0)' },
+                            '100%': { transform: 'translateX(-50%)' },
+                        },
+                        glow: {
+                            '0%': { boxShadow: '0 0 5px #0066b3, 0 0 10px #0066b3, 0 0 15px #0066b3' },
+                            '100%': { boxShadow: '0 0 10px #0066b3, 0 0 20px #0066b3, 0 0 30px #0066b3' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #0a0a0a;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+        
+        .glass {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .glass-strong {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+        
+        .neon-glow {
+            box-shadow: 0 0 20px rgba(0, 102, 179, 0.5), 
+                        0 0 40px rgba(0, 102, 179, 0.3),
+                        0 0 60px rgba(0, 102, 179, 0.1);
+        }
+        
+        .neon-text {
+            text-shadow: 0 0 10px rgba(0, 102, 179, 0.8),
+                         0 0 20px rgba(0, 102, 179, 0.5),
+                         0 0 30px rgba(0, 102, 179, 0.3);
+        }
+        
+        .neon-orange {
+            box-shadow: 0 0 20px rgba(255, 107, 53, 0.5),
+                        0 0 40px rgba(255, 107, 53, 0.3);
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #ffffff 0%, #0066b3 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hero-bg {
+            background: radial-gradient(ellipse at top, #1a1a2e 0%, #0a0a0a 50%, #000000 100%);
+        }
+        
+        .grid-pattern {
+            background-image: 
+                linear-gradient(rgba(0, 102, 179, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 102, 179, 0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+        }
+        
+        .service-card {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .service-card:hover .service-overlay {
+            opacity: 1;
+        }
+        
+        .portfolio-item {
+            overflow: hidden;
+        }
+        
+        .portfolio-item img {
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .portfolio-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        .portfolio-overlay {
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+        
+        .portfolio-item:hover .portfolio-overlay {
+            opacity: 1;
+        }
+        
+        .client-scroll {
+            display: flex;
+            animation: scroll 30s linear infinite;
+        }
+        
+        .client-scroll:hover {
+            animation-play-state: paused;
+        }
+        
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #0066b3 0%, #005090 100%);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 102, 179, 0.4);
+        }
+        
+        .btn-secondary {
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-secondary:hover {
+            border-color: #0066b3;
+            background: rgba(0, 102, 179, 0.1);
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #0066b3;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .floating-shape {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.4;
+        }
+        
+        .input-field {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .input-field:focus {
+            outline: none;
+            border-color: #0066b3;
+            background: rgba(255, 255, 255, 0.08);
+            box-shadow: 0 0 20px rgba(0, 102, 179, 0.2);
+        }
+        
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+        
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+<base target="_blank">
+</head>
+<body class="antialiased">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass-strong border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center gap-3">
+                    <div class="w-10 h-10 bg-brand-blue rounded-lg flex items-center justify-center neon-glow">
+                        <span class="text-white font-bold text-xl">Q</span>
+                    </div>
+                    <div>
+                        <h1 class="text-xl font-bold tracking-tight">Quick Design</h1>
+                        <p class="text-xs text-gray-400 tracking-widest">PRINTING & ADVERTISING</p>
+                    </div>
+                </div>
+                
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="nav-link text-sm font-medium hover:text-brand-blue transition-colors">Home</a>
+                    <a href="#about" class="nav-link text-sm font-medium hover:text-brand-blue transition-colors">About</a>
+                    <a href="#services" class="nav-link text-sm font-medium hover:text-brand-blue transition-colors">Services</a>
+                    <a href="#portfolio" class="nav-link text-sm font-medium hover:text-brand-blue transition-colors">Portfolio</a>
+                    <a href="#contact" class="nav-link text-sm font-medium hover:text-brand-blue transition-colors">Contact</a>
+                </div>
+                
+                <div class="hidden md:block">
+                    <a href="#contact" class="btn-primary px-6 py-2.5 rounded-full text-sm font-semibold text-white">
+                        Get Quote
+                    </a>
+                </div>
+                
+                <button id="mobile-menu-btn" class="md:hidden text-white p-2">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden glass-strong border-t border-white/10">
+            <div class="px-4 pt-2 pb-6 space-y-2">
+                <a href="#home" class="block px-3 py-2 text-base font-medium hover:text-brand-blue">Home</a>
+                <a href="#about" class="block px-3 py-2 text-base font-medium hover:text-brand-blue">About</a>
+                <a href="#services" class="block px-3 py-2 text-base font-medium hover:text-brand-blue">Services</a>
+                <a href="#portfolio" class="block px-3 py-2 text-base font-medium hover:text-brand-blue">Portfolio</a>
+                <a href="#contact" class="block px-3 py-2 text-base font-medium hover:text-brand-blue">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-screen hero-bg grid-pattern flex items-center overflow-hidden pt-20">
+        <!-- Floating Elements -->
+        <div class="floating-shape w-96 h-96 bg-brand-blue top-20 -left-48 animate-float"></div>
+        <div class="floating-shape w-64 h-64 bg-brand-orange bottom-20 -right-32 animate-float" style="animation-delay: 2s;"></div>
+        <div class="floating-shape w-48 h-48 bg-purple-600 top-1/2 right-1/4 animate-float" style="animation-delay: 4s;"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-8 reveal active">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 glass rounded-full">
+                        <span class="w-2 h-2 bg-brand-orange rounded-full animate-pulse"></span>
+                        <span class="text-sm font-medium text-gray-300">Premium Printing Solutions in Abu Dhabi</span>
+                    </div>
+                    
+                    <h1 class="text-5xl md:text-7xl font-bold leading-tight">
+                        Where <span class="gradient-text">Creativity</span><br>
+                        Meets <span class="text-brand-blue neon-text">Precision</span>
+                    </h1>
+                    
+                    <p class="text-lg text-gray-400 max-w-xl leading-relaxed">
+                        Elevate your brand with our comprehensive printing and advertising solutions. From business cards to large format banners, we deliver excellence with every print.
+                    </p>
+                    
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#contact" class="btn-primary px-8 py-4 rounded-full font-semibold text-white flex items-center gap-2">
+                            <span>Get a Quote</span>
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                            </svg>
+                        </a>
+                        <a href="#services" class="btn-secondary px-8 py-4 rounded-full font-semibold text-white">
+                            View Services
+                        </a>
+                    </div>
+                    
+                    <div class="flex items-center gap-8 pt-4">
+                        <div>
+                            <p class="text-3xl font-bold text-white">15+</p>
+                            <p class="text-sm text-gray-500">Years Experience</p>
+                        </div>
+                        <div class="w-px h-12 bg-white/10"></div>
+                        <div>
+                            <p class="text-3xl font-bold text-white">5000+</p>
+                            <p class="text-sm text-gray-500">Projects Done</p>
+                        </div>
+                        <div class="w-px h-12 bg-white/10"></div>
+                        <div>
+                            <p class="text-3xl font-bold text-white">100%</p>
+                            <p class="text-sm text-gray-500">Client Satisfaction</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="relative hidden lg:block">
+                    <div class="relative z-10 grid grid-cols-2 gap-4">
+                        <div class="space-y-4 mt-12">
+                            <div class="glass p-4 rounded-2xl neon-glow transform hover:scale-105 transition-transform">
+                                <img src="https://kimi-web-img.moonshot.cn/img/www.mockupcloud.com/6f1248748f2447a3b8f91c2af3e963b00a1635ab.jpg" alt="Business Cards" class="w-full h-48 object-cover rounded-xl">
+                                <p class="mt-3 text-sm font-semibold text-center">Business Cards</p>
+                            </div>
+                            <div class="glass p-4 rounded-2xl transform hover:scale-105 transition-transform">
+                                <img src="https://kimi-web-img.moonshot.cn/img/goodmockups.com/eedf90352c9b1bdd52dc2ae2d8b3bbd8b4bee6ee.jpg" alt="Flyers" class="w-full h-48 object-cover rounded-xl">
+                                <p class="mt-3 text-sm font-semibold text-center">Flyers & Brochures</p>
+                            </div>
+                        </div>
+                        <div class="space-y-4">
+                            <div class="glass p-4 rounded-2xl transform hover:scale-105 transition-transform">
+                                <img src="https://kimi-web-img.moonshot.cn/img/unblast.com/98d51001135c85d4146a09ea839f92028cbb7eb3.jpg" alt="Large Format" class="w-full h-48 object-cover rounded-xl">
+                                <p class="mt-3 text-sm font-semibold text-center">Large Format</p>
+                            </div>
+                            <div class="glass p-4 rounded-2xl neon-orange transform hover:scale-105 transition-transform">
+                                <img src="https://kimi-web-img.moonshot.cn/img/goodmockups.com/b6d5a5119a36c72a9e945e545f2ecdf51f6c33e1.jpg" alt="Signboards" class="w-full h-48 object-cover rounded-xl">
+                                <p class="mt-3 text-sm font-semibold text-center">3D Signboards</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Decorative Elements -->
+                    <div class="absolute -top-10 -right-10 w-32 h-32 border border-brand-blue/30 rounded-full animate-spin-slow"></div>
+                    <div class="absolute -bottom-10 -left-10 w-24 h-24 border border-brand-orange/30 rounded-full"></div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <svg class="w-6 h-6 text-white/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+            </svg>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="relative reveal">
+                    <div class="absolute inset-0 bg-gradient-to-r from-brand-blue to-purple-600 rounded-3xl transform rotate-3 opacity-20"></div>
+                    <div class="relative glass-strong rounded-3xl p-2">
+                        <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&h=600&fit=crop" alt="Our Printing Facility" class="w-full h-[500px] object-cover rounded-2xl">
+                        
+                        <!-- Floating Card -->
+                        <div class="absolute -bottom-6 -right-6 glass p-6 rounded-2xl neon-glow max-w-xs">
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 bg-brand-blue rounded-full flex items-center justify-center">
+                                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-white">Quality Assured</p>
+                                    <p class="text-sm text-gray-400">ISO Certified</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="space-y-6 reveal">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 glass rounded-full">
+                        <span class="w-8 h-px bg-brand-blue"></span>
+                        <span class="text-sm font-medium text-brand-blue uppercase tracking-wider">About Us</span>
+                    </div>
+                    
+                    <h2 class="text-4xl md:text-5xl font-bold leading-tight">
+                        Crafting Visual Excellence<br>
+                        <span class="text-brand-blue">Since 2009</span>
+                    </h2>
+                    
+                    <p class="text-gray-400 text-lg leading-relaxed">
+                        Quick Design Printing & Advertising is your premier destination for high-quality printing and creative advertising solutions in Abu Dhabi. We combine cutting-edge technology with artistic expertise to deliver products that make your brand stand out.
+                    </p>
+                    
+                    <p class="text-gray-400 leading-relaxed">
+                        Located in the heart of Musaffah, our state-of-the-art facility is equipped with the latest printing machinery to handle projects of any scale. From small business cards to massive billboards, we ensure every detail meets our exacting standards.
+                    </p>
+                    
+                    <div class="grid grid-cols-2 gap-6 pt-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 glass rounded-xl flex items-center justify-center flex-shrink-0">
+                                <svg class="w-6 h-6 text-brand-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-white mb-1">Fast Turnaround</h4>
+                                <p class="text-sm text-gray-500">Quick delivery without compromising quality</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 glass rounded-xl flex items-center justify-center flex-shrink-0">
+                                <svg class="w-6 h-6 text-brand-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-white mb-1">Premium Quality</h4>
+                                <p class="text-sm text-gray-500">Top-grade materials and inks</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-24 relative">
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-brand-blue/5 to-transparent"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+                <div class="inline-flex items-center gap-2 px-4 py-2 glass rounded-full mb-6">
+                    <span class="w-8 h-px bg-brand-blue"></span>
+                    <span class="text-sm font-medium text-brand-blue uppercase tracking-wider">Our Services</span>
+                    <span class="w-8 h-px bg-brand-blue"></span>
+                </div>
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">Comprehensive Printing<br>& Advertising Solutions</h2>
+                <p class="text-gray-400 text-lg">From concept to completion, we handle all your printing and branding needs with precision and creativity.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Service 1 -->
+                <div class="service-card glass rounded-2xl overflow-hidden group reveal">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://kimi-web-img.moonshot.cn/img/www.mockupcloud.com/6f1248748f2447a3b8f91c2af3e963b00a1635ab.jpg" alt="Business Cards" class="w-full h-full object-cover">
+                        <div class="service-overlay absolute inset-0 bg-brand-blue/80 flex items-center justify-center opacity-0 transition-opacity duration-300">
+                            <svg class="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 group-hover:text-brand-blue transition-colors">Business Cards</h3>
+                        <p class="text-gray-400 text-sm mb-4">Premium quality cards with various finishes including matte, gloss, and velvet lamination.</p>
+                        <a href="#contact" class="text-brand-blue text-sm font-semibold flex items-center gap-1 hover:gap-2 transition-all">
+                            Learn More 
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="service-card glass rounded-2xl overflow-hidden group reveal">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://kimi-web-img.moonshot.cn/img/goodmockups.com/eedf90352c9b1bdd52dc2ae2d8b3bbd8b4bee6ee.jpg" alt="Flyers & Brochures" class="w-full h-full object-cover">
+                        <div class="service-overlay absolute inset-0 bg-brand-blue/80 flex items-center justify-center opacity-0 transition-opacity duration-300">
+                            <svg class="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 group-hover:text-brand-blue transition-colors">Flyers & Brochures</h3>
+                        <p class="text-gray-400 text-sm mb-4">Eye-catching marketing materials in various sizes and folds to promote your business.</p>
+                        <a href="#contact" class="text-brand-blue text-sm font-semibold flex items-center gap-1 hover:gap-2 transition-all">
+                            Learn More 
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="service-card glass rounded-2xl overflow-hidden group reveal">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://kimi-web-img.moonshot.cn/img/unblast.com/98d51001135c85d4146a09ea839f92028cbb7eb3.jpg" alt="Large Format Printing" class="w-full h-full object-cover">
+                        <div class="service-overlay absolute inset-0 bg-brand-blue/80 flex items-center justify-center opacity-0 transition-opacity duration-300">
+                            <svg class="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 group-hover:text-brand-blue transition-colors">Large Format Printing</h3>
+                        <p class="text-gray-400 text-sm mb-4">Banners, posters, and displays with vibrant colors and weather-resistant materials.</p>
+                        <a href="#contact" class="text-brand-blue text-sm font-semibold flex items-center gap-1 hover:gap-2 transition-all">
+                            Learn More 
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Service 4 -->
+                <div class="service-card glass rounded-2xl overflow-hidden group reveal">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://kimi-web-img.moonshot.cn/img/img.freepik.com/55c03c4086805673c83e030e97761f9b2ddda328.jpg" alt="T-Shirt Printing" class="w-full h-full object-cover">
+                        <div class="service-overlay absolute inset-0 bg-brand-blue/80 flex items-center justify-center opacity-0 transition-opacity duration-300">
+                            <svg class="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 group-hover:text-brand-blue transition-colors">T-Shirt Printing</h3>
+                        <p class="text-gray-400 text-sm mb-4">Custom apparel with screen printing, DTG, and heat transfer options available.</p>
+                        <a href="#contact" class="text-brand-blue text-sm font-semibold flex items-center gap-1 hover:gap-2 transition-all">
+                            Learn More 
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Service 5 -->
+                <div class="service-card glass rounded-2xl overflow-hidden group reveal">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://kimi-web-img.moonshot.cn/img/img.freepik.com/30c5c68617b5805749ffcd1edc2cb3c61336f974.jpg" alt="Stickers & Labels" class="w-full h-full object-cover">
+                        <div class="service-overlay absolute inset-0 bg-brand-blue/80 flex items-center justify-center opacity-0 transition-opacity duration-300">
+                            <svg class="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 group-hover:text-brand-blue transition-colors">Stickers & Labels</h3>
+                        <p class="text-gray-400 text-sm mb-4">Custom die-cut stickers and product labels with waterproof and vinyl options.</p>
+                        <a href="#contact" class="text-brand-blue text-sm font-semibold flex items-center gap-1 hover:gap-2 transition-all">
+                            Learn More 
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Service 6 -->
+                <div class="service-card glass rounded-2xl overflow-hidden group reveal">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1561070791-36c11767b26a?w=600&h=400&fit=crop" alt="Banners & Signboards" class="w-full h-full object-cover">
+                        <div class="service-overlay absolute inset-0 bg-brand-blue/80 flex items-center justify-center opacity-0 transition-opacity duration-300">
+                            <svg class="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 group-hover:text-brand-blue transition-colors">Banners & Signboards</h3>
+                        <p class="text-gray-400 text-sm mb-4">Indoor and outdoor signage solutions including roll-up stands and flex banners.</p>
+                        <a href="#contact" class="text-brand-blue text-sm font-semibold flex items-center gap-1 hover:gap-2 transition-all">
+                            Learn More 
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Service 7 -->
+                <div class="service-card glass rounded-2xl overflow-hidden group reveal">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://kimi-web-img.moonshot.cn/img/goodmockups.com/b6d5a5119a36c72a9e945e545f2ecdf51f6c33e1.jpg" alt="3D Signboards" class="w-full h-full object-cover">
+                        <div class="service-overlay absolute inset-0 bg-brand-blue/80 flex items-center justify-center opacity-0 transition-opacity duration-300">
+                            <svg class="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 group-hover:text-brand-blue transition-colors">3D Signboards</h3>
+                        <p class="text-gray-400 text-sm mb-4">Illuminated channel letters and acrylic signs for maximum visibility.</p>
+                        <a href="#contact" class="text-brand-blue text-sm font-semibold flex items-center gap-1 hover:gap-2 transition-all">
+                            Learn More 
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Service 8 -->
+                <div class="service-card glass rounded-2xl overflow-hidden group reveal">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1542744094-3a31f272c490?w=600&h=400&fit=crop" alt="Branding Solutions" class="w-full h-full object-cover">
+                        <div class="service-overlay absolute inset-0 bg-brand-blue/80 flex items-center justify-center opacity-0 transition-opacity duration-300">
+                            <svg class="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 group-hover:text-brand-blue transition-colors">Branding & Advertising</h3>
+                        <p class="text-gray-400 text-sm mb-4">Complete brand identity design and marketing strategy solutions.</p>
+                        <a href="#contact" class="text-brand-blue text-sm font-semibold flex items-center gap-1 hover:gap-2 transition-all">
+                            Learn More 
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-24 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+                <div class="inline-flex items-center gap-2 px-4 py-2 glass rounded-full mb-6">
+                    <span class="w-8 h-px bg-brand-blue"></span>
+                    <span class="text-sm font-medium text-brand-blue uppercase tracking-wider">Portfolio</span>
+                    <span class="w-8 h-px bg-brand-blue"></span>
+                </div>
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">Our Recent Work</h2>
+                <p class="text-gray-400 text-lg">Explore our latest projects showcasing creativity and precision in every detail.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="portfolio-item rounded-2xl relative group reveal">
+                    <img src="https://kimi-web-img.moonshot.cn/img/www.mockupcloud.com/6f1248748f2447a3b8f91c2af3e963b00a1635ab.jpg" alt="Portfolio 1" class="w-full h-80 object-cover rounded-2xl">
+                    <div class="portfolio-overlay absolute inset-0 glass-strong rounded-2xl flex flex-col items-center justify-center p-6 text-center">
+                        <h4 class="text-xl font-bold mb-2">Luxury Business Cards</h4>
+                        <p class="text-gray-300 text-sm">Gold foil stamping on black matte</p>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item rounded-2xl relative group reveal lg:row-span-2">
+                    <img src="https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?w=600&h=800&fit=crop" alt="Portfolio 2" class="w-full h-full min-h-[400px] object-cover rounded-2xl">
+                    <div class="portfolio-overlay absolute inset-0 glass-strong rounded-2xl flex flex-col items-center justify-center p-6 text-center">
+                        <h4 class="text-xl font-bold mb-2">Corporate Branding</h4>
+                        <p class="text-gray-300 text-sm">Complete stationery set design</p>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item rounded-2xl relative group reveal">
+                    <img src="https://kimi-web-img.moonshot.cn/img/unblast.com/98d51001135c85d4146a09ea839f92028cbb7eb3.jpg" alt="Portfolio 3" class="w-full h-80 object-cover rounded-2xl">
+                    <div class="portfolio-overlay absolute inset-0 glass-strong rounded-2xl flex flex-col items-center justify-center p-6 text-center">
+                        <h4 class="text-xl font-bold mb-2">Large Format Banner</h4>
+                        <p class="text-gray-300 text-sm">Trade show display graphics</p>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item rounded-2xl relative group reveal">
+                    <img src="https://kimi-web-img.moonshot.cn/img/img.freepik.com/55c03c4086805673c83e030e97761f9b2ddda328.jpg" alt="Portfolio 4" class="w-full h-80 object-cover rounded-2xl">
+                    <div class="portfolio-overlay absolute inset-0 glass-strong rounded-2xl flex flex-col items-center justify-center p-6 text-center">
+                        <h4 class="text-xl font-bold mb-2">Custom Apparel</h4>
+                        <p class="text-gray-300 text-sm">Company uniform printing</p>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item rounded-2xl relative group reveal">
+                    <img src="https://kimi-web-img.moonshot.cn/img/goodmockups.com/b6d5a5119a36c72a9e945e545f2ecdf51f6c33e1.jpg" alt="Portfolio 5" class="w-full h-80 object-cover rounded-2xl">
+                    <div class="portfolio-overlay absolute inset-0 glass-strong rounded-2xl flex flex-col items-center justify-center p-6 text-center">
+                        <h4 class="text-xl font-bold mb-2">3D Store Signage</h4>
+                        <p class="text-gray-300 text-sm">Illuminated channel letters</p>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item rounded-2xl relative group reveal">
+                    <img src="https://kimi-web-img.moonshot.cn/img/goodmockups.com/eedf90352c9b1bdd52dc2ae2d8b3bbd8b4bee6ee.jpg" alt="Portfolio 6" class="w-full h-80 object-cover rounded-2xl">
+                    <div class="portfolio-overlay absolute inset-0 glass-strong rounded-2xl flex flex-col items-center justify-center p-6 text-center">
+                        <h4 class="text-xl font-bold mb-2">Marketing Brochures</h4>
+                        <p class="text-gray-300 text-sm">Tri-fold product catalog</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <button class="btn-secondary px-8 py-4 rounded-full font-semibold text-white inline-flex items-center gap-2">
+                    View All Projects
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Clients Section -->
+    <section class="py-20 relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-r from-brand-blue/5 via-transparent to-brand-blue/5"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
+            <div class="text-center reveal">
+                <h3 class="text-2xl font-bold text-gray-400">Trusted by Leading Brands</h3>
+            </div>
+        </div>
+        
+        <div class="relative">
+            <div class="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-brand-black to-transparent z-10"></div>
+            <div class="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-brand-black to-transparent z-10"></div>
+            
+            <div class="flex overflow-hidden">
+                <div class="client-scroll flex gap-12 items-center py-8">
+                    <!-- Client Logos (duplicated for infinite scroll) -->
+                    <div class="flex gap-12 items-center">
+                        <div class="w-24 h-24 glass rounded-full flex items-center justify-center flex-shrink-0 hover:neon-glow transition-all">
+                            <span class="text-2xl font-bold text-gray-400">ABC</span>
+                        </div>
+                        <div class="w-24 h-24 glass rounded-full flex items-center justify-center flex-shrink-0 hover:neon-glow transition-all">
+                            <span class="text-2xl font-bold text-gray-400">XYZ</span>
+                        </div>
+                        <div class="w-24 h-24 glass rounded-full flex items-center justify-center flex-shrink-0 hover:neon-glow transition-all">
+                            <span class="text-2xl font-bold text-gray-400">123</span>
+                        </div>
+                        <div class="w-24 h-24 glass rounded-full flex items-center justify-center flex-shrink-0 hover:neon-glow transition-all">
+                            <span class="text-2xl font-bold text-gray-400">BRD</span>
+                        </div>
+                        <div class="w-24 h-24 glass rounded-full flex items-center justify-center flex-shrink-0 hover:neon-glow transition-all">
+                            <span class="text-2xl font-bold text-gray-400">FLW</span>
+                        </div>
+                        <div class="w-24 h-24 glass rounded-full flex items-center justify-center flex-shrink-0 hover:neon-glow transition-all">
+                            <span class="text-2xl font-bold text-gray-400">STK</span>
+                        </div>
+                        <div class="w-24 h-24 glass rounded-full flex items-center justify-center flex-shrink-0 hover:neon-glow transition-all">
+                            <span class="text-2xl font-bold text-gray-400">MNO</span>
+                        </div>
+                        <div class="w-24 h-24 glass rounded-full flex items-center justify-center flex-shrink-0 hover:neon-glow transition-all">
+                            <span class="text-2xl font-bold text-gray-400">PQR</span>
+                        </div>
+                    </div>
+                    <!-- Duplicate for seamless loop -->
+                    <div class="flex gap-12 items-center">
+                        <div class="w-24 h-24 glass rounded-full flex items-center justify-center flex-shrink-0 hover:neon-glow transition-all">
+                            <span class="text-2xl font-bold text-gray-400">ABC</span>
+                        </div>
+                        <div class="w-24 h-24 glass rounded-full flex items-center justify-center flex-shrink-0 hover:neon-glow transition-all">
+                            <span class="text-2xl font-bold text-gray-400">XYZ</span>
+                        </div>
+                        <div class="w-24 h-24 glass rounded-full flex items-center justify-center flex-shrink-0 hover:neon-glow transition-all">
+                            <span class="text-2xl font-bold text-gray-400">123</span>
+                        </div>
+                        <div class="w-24 h-24 glass rounded-full flex items-center justify-center flex-shrink-0 hover:neon-glow transition-all">
+                            <span class="text-2xl font-bold text-gray-400">BRD</span>
+                        </div>
+                        <div class="w-24 h-24 glass rounded-full flex items-center justify-center flex-shrink-0 hover:neon-glow transition-all">
+                            <span class="text-2xl font-bold text-gray-400">FLW</span>
+                        </div>
+                        <div class="w-24 h-24 glass rounded-full flex items-center justify-center flex-shrink-0 hover:neon-glow transition-all">
+                            <span class="text-2xl font-bold text-gray-400">STK</span>
+                        </div>
+                        <div class="w-24 h-24 glass rounded-full flex items-center justify-center flex-shrink-0 hover:neon-glow transition-all">
+                            <span class="text-2xl font-bold text-gray-400">MNO</span>
+                        </div>
+                        <div class="w-24 h-24 glass rounded-full flex items-center justify-center flex-shrink-0 hover:neon-glow transition-all">
+                            <span class="text-2xl font-bold text-gray-400">PQR</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="py-24 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+                <div class="inline-flex items-center gap-2 px-4 py-2 glass rounded-full mb-6">
+                    <span class="w-8 h-px bg-brand-blue"></span>
+                    <span class="text-sm font-medium text-brand-blue uppercase tracking-wider">Why Choose Us</span>
+                    <span class="w-8 h-px bg-brand-blue"></span>
+                </div>
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">The Quick Design<br>Difference</h2>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="glass p-8 rounded-2xl text-center group hover:neon-glow transition-all reveal">
+                    <div class="w-16 h-16 mx-auto mb-6 bg-brand-blue/20 rounded-2xl flex items-center justify-center group-hover:bg-brand-blue transition-colors">
+                        <svg class="w-8 h-8 text-brand-blue group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">High Quality Printing</h3>
+                    <p class="text-gray-400 text-sm">State-of-the-art equipment ensuring crisp, vibrant results every time.</p>
+                </div>
+                
+                <div class="glass p-8 rounded-2xl text-center group hover:neon-glow transition-all reveal">
+                    <div class="w-16 h-16 mx-auto mb-6 bg-brand-blue/20 rounded-2xl flex items-center justify-center group-hover:bg-brand-blue transition-colors">
+                        <svg class="w-8 h-8 text-brand-blue group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Fast Delivery</h3>
+                    <p class="text-gray-400 text-sm">Quick turnaround times to meet your urgent deadlines without compromise.</p>
+                </div>
+                
+                <div class="glass p-8 rounded-2xl text-center group hover:neon-glow transition-all reveal">
+                    <div class="w-16 h-16 mx-auto mb-6 bg-brand-blue/20 rounded-2xl flex items-center justify-center group-hover:bg-brand-blue transition-colors">
+                        <svg class="w-8 h-8 text-brand-blue group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Creative Designs</h3>
+                    <p class="text-gray-400 text-sm">Expert designers bringing your vision to life with innovative concepts.</p>
+                </div>
+                
+                <div class="glass p-8 rounded-2xl text-center group hover:neon-glow transition-all reveal">
+                    <div class="w-16 h-16 mx-auto mb-6 bg-brand-blue/20 rounded-2xl flex items-center justify-center group-hover:bg-brand-blue transition-colors">
+                        <svg class="w-8 h-8 text-brand-blue group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Affordable Pricing</h3>
+                    <p class="text-gray-400 text-sm">Competitive rates without sacrificing quality or service excellence.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 relative">
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-brand-blue/5 to-transparent"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-16">
+                <div class="space-y-8 reveal">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 glass rounded-full">
+                        <span class="w-8 h-px bg-brand-blue"></span>
+                        <span class="text-sm font-medium text-brand-blue uppercase tracking-wider">Contact Us</span>
+                    </div>
+                    
+                    <h2 class="text-4xl md:text-5xl font-bold leading-tight">
+                        Let's Create<br>
+                        <span class="text-brand-blue">Something Amazing</span>
+                    </h2>
+                    
+                    <p class="text-gray-400 text-lg">Ready to start your project? Get in touch with us for a free quote or to discuss your printing needs.</p>
+                    
+                    <div class="space-y-6 pt-4">
+                        <div class="flex items-center gap-4">
+                            <div class="w-14 h-14 glass rounded-xl flex items-center justify-center neon-glow">
+                                <svg class="w-6 h-6 text-brand-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-500 mb-1">Phone</p>
+                                <p class="text-lg font-semibold">+971 55 866 1437</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center gap-4">
+                            <div class="w-14 h-14 glass rounded-xl flex items-center justify-center neon-glow">
+                                <svg class="w-6 h-6 text-brand-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-500 mb-1">Email</p>
+                                <p class="text-lg font-semibold">info@quickdesign.ae</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center gap-4">
+                            <div class="w-14 h-14 glass rounded-xl flex items-center justify-center neon-glow">
+                                <svg class="w-6 h-6 text-brand-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-500 mb-1">Address</p>
+                                <p class="text-lg font-semibold">Near ST. Paul Church, Musaffah M32<br>Abu Dhabi - U.A.E.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Map -->
+                    <div class="glass p-2 rounded-2xl mt-8">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3631.4774864464986!2d54.5186!3d24.4175!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5e686e5a9e3f1f%3A0x1234567890abcdef!2sMusaffah%2C%20Abu%20Dhabi!5e0!3m2!1sen!2sae!4v1234567890" 
+                            width="100%" 
+                            height="250" 
+                            style="border:0; border-radius: 12px;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+                
+                <div class="glass-strong p-8 md:p-10 rounded-3xl reveal">
+                    <h3 class="text-2xl font-bold mb-6">Send us a Message</h3>
+                    <form class="space-y-6" onsubmit="event.preventDefault(); alert('Thank you for your message! We will contact you soon.');">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-400 mb-2">Your Name</label>
+                                <input type="text" class="input-field w-full px-4 py-3 rounded-xl text-white placeholder-gray-600" placeholder="John Doe" required>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-400 mb-2">Phone Number</label>
+                                <input type="tel" class="input-field w-full px-4 py-3 rounded-xl text-white placeholder-gray-600" placeholder="+971 XX XXX XXXX" required>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-gray-400 mb-2">Email Address</label>
+                            <input type="email" class="input-field w-full px-4 py-3 rounded-xl text-white placeholder-gray-600" placeholder="john@example.com" required>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-gray-400 mb-2">Service Required</label>
+                            <select class="input-field w-full px-4 py-3 rounded-xl text-white bg-transparent">
+                                <option value="" class="bg-brand-dark">Select a Service</option>
+                                <option value="business-cards" class="bg-brand-dark">Business Cards</option>
+                                <option value="flyers" class="bg-brand-dark">Flyers & Brochures</option>
+                                <option value="large-format" class="bg-brand-dark">Large Format Printing</option>
+                                <option value="t-shirts" class="bg-brand-dark">T-Shirt Printing</option>
+                                <option value="stickers" class="bg-brand-dark">Stickers & Labels</option>
+                                <option value="banners" class="bg-brand-dark">Banners & Signboards</option>
+                                <option value="3d-signs" class="bg-brand-dark">3D Signboards</option>
+                                <option value="branding" class="bg-brand-dark">Branding Solutions</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-gray-400 mb-2">Message</label>
+                            <textarea rows="4" class="input-field w-full px-4 py-3 rounded-xl text-white placeholder-gray-600 resize-none" placeholder="Tell us about your project..." required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn-primary w-full py-4 rounded-xl font-semibold text-white text-lg flex items-center justify-center gap-2">
+                            Send Message
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/>
+                            </svg>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-white/10 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-12 mb-12">
+                <div class="space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-brand-blue rounded-lg flex items-center justify-center neon-glow">
+                            <span class="text-white font-bold text-xl">Q</span>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-bold">Quick Design</h4>
+                            <p class="text-xs text-gray-500">PRINTING & ADVERTISING</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Your trusted partner for premium printing and advertising solutions in Abu Dhabi. Quality, creativity, and precision in every project.
+                    </p>
+                </div>
+                
+                <div>
+                    <h5 class="font-semibold mb-4 text-white">Quick Links</h5>
+                    <ul class="space-y-3">
+                        <li><a href="#home" class="text-gray-400 hover:text-brand-blue transition-colors text-sm">Home</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-brand-blue transition-colors text-sm">About Us</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-brand-blue transition-colors text-sm">Services</a></li>
+                        <li><a href="#portfolio" class="text-gray-400 hover:text-brand-blue transition-colors text-sm">Portfolio</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-brand-blue transition-colors text-sm">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h5 class="font-semibold mb-4 text-white">Services</h5>
+                    <ul class="space-y-3">
+                        <li><a href="#services" class="text-gray-400 hover:text-brand-blue transition-colors text-sm">Business Cards</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-brand-blue transition-colors text-sm">Large Format Printing</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-brand-blue transition-colors text-sm">3D Signboards</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-brand-blue transition-colors text-sm">Branding Solutions</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-brand-blue transition-colors text-sm">T-Shirt Printing</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h5 class="font-semibold mb-4 text-white">Connect With Us</h5>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-10 h-10 glass rounded-full flex items-center justify-center hover:bg-brand-blue hover:neon-glow transition-all">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 glass rounded-full flex items-center justify-center hover:bg-brand-blue hover:neon-glow transition-all">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 glass rounded-full flex items-center justify-center hover:bg-brand-blue hover:neon-glow transition-all">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 glass rounded-full flex items-center justify-center hover:bg-brand-blue hover:neon-glow transition-all">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-gray-500 text-sm">&copy; 2024 Quick Design Printing & Advertising. All rights reserved.</p>
+                <div class="flex gap-6 text-sm text-gray-500">
+                    <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Close mobile menu when clicking a link
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+        
+        // Scroll reveal animation
+        const revealElements = document.querySelectorAll('.reveal');
+        
+        const revealOnScroll = () => {
+            revealElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (elementTop < windowHeight - 100) {
+                    element.classList.add('active');
+                }
+            });
+        };
+        
+        window.addEventListener('scroll', revealOnScroll);
+        window.addEventListener('load', revealOnScroll);
+        
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Navbar background on scroll
+        const nav = document.querySelector('nav');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                nav.classList.add('shadow-lg');
+            } else {
+                nav.classList.remove('shadow-lg');
+            }
+        });
+    </script>
+</body>
+</html>
